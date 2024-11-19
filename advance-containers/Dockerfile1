@@ -1,0 +1,11 @@
+# Dockerfile1
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY web-service/app.py /app/app.py
+COPY web-service/config.txt /app/config.txt
+
+RUN pip install flask
+
+CMD ["python", "app.py"]
